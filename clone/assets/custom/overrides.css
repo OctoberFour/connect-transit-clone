@@ -1,0 +1,219 @@
+/* Custom overrides applied on top of base_q8fd1ce.css */
+
+/* Hamburger / mobile-nav icon */
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after,
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #FFCF36 !important;
+}
+.hamburger.is-active,
+.hamburger.is-active:hover {
+  background-color: transparent !important;
+}
+
+/* Caret / chevron elements in nav dropdowns */
+.sub-link-icon,
+.fas.fa-angle-down,
+.fas.fa-angle-up,
+.fas.fa-angle-right,
+.fas.fa-angle-left,
+.fas.fa-chevron-down,
+.fas.fa-chevron-up,
+.fas.fa-chevron-right,
+.fas.fa-chevron-left,
+.fas.fa-caret-down,
+.fas.fa-caret-up,
+.main-nav-link .sub-link-icon,
+.mobile-nav-link .sub-link-icon,
+.mobile-sub-nav-link .sub-link-icon {
+  color: #FFCF36 !important;
+}
+
+/* Top-bar social + search icons */
+.top-nav-social-icon,
+.top-nav-search-icon,
+.top-nav-link .fab,
+.top-nav-link .fas {
+  color: #FFCF36 !important;
+}
+
+/* Rider Tools icons (map, bus, ticket, exclamation, info) */
+.rider-tool .fas,
+.rider-tool .fab,
+.rider-tools .fas,
+.rider-tools .fab,
+.tools-sublink .fas,
+.tools-sublink .fab {
+  color: #FFCF36 !important;
+}
+
+/* Plan-Your-Route widget icons (bus / map pin) */
+.routes-wrapper .fas,
+.routes-wrapper .fab,
+.routes-wrapper .fa,
+.routes-icon,
+.routes-form .fas,
+.routes-form .fab {
+  color: #FFCF36 !important;
+}
+
+/* Footer social icons */
+.footer-social-icon,
+.footer-main .fab,
+.footer-main .fas {
+  color: #FFCF36 !important;
+}
+
+/* Default text-link color: mid-blue. Inline styles on a few legacy pages
+   pin links to rgb(77,174,244); !important here clobbers those too. The
+   nav/footer/button rules below still win because they use !important. */
+a,
+a[style] {
+  color: #24408E !important;
+}
+.color-secondary a,
+.full-background.green a {
+  color: #24408E !important;
+}
+/* Restore explicit colors where the design needs them */
+.top-nav-link,
+.top-subnav-link,
+.alert-item a,
+.footer-link,
+.footer-info a,
+.footer-sitemap a,
+.cms-btn-secondary,
+.cms-btn-grey,
+a.cms-btn-secondary,
+a.cms-btn-grey {
+  color: inherit !important;
+}
+.cms-btn-secondary,
+a.cms-btn-secondary {
+  color: #fff !important;
+}
+.cms-btn-primary,
+a.cms-btn-primary {
+  color: #0B1A54 !important;
+}
+.amsd-item-title a,
+.amsd-profile-title a,
+.twitter-feed-wrapper .twitter-logo a {
+  color: #0B1A54 !important;
+}
+footer a,
+footer .footer-link,
+footer .footer-info a,
+footer .footer-sitemap a {
+  color: #fff !important;
+}
+.top-nav-link,
+.top-subnav-link {
+  color: #fff !important;
+}
+.main-nav-link {
+  color: #171717 !important;
+}
+.sub-nav-link {
+  color: #0B1A54 !important;
+}
+
+/* Link hover color (site-wide) */
+a:hover,
+.top-nav-link:hover,
+.main-nav-link:hover,
+.sub-nav-link:hover,
+.mobile-nav-link:hover,
+.mobile-sub-nav-link:hover,
+.footer-link:hover,
+.footer-info a:hover,
+.footer-sitemap a:hover,
+.rider-tool:hover {
+  color: #8C93A3 !important;
+}
+.featured-links-wrapper .featured-links-items .featured-link-item:hover .featured-link,
+.featured-links-wrapper .featured-links-items .featured-link-item:hover .featured-link-circle {
+  /* keep navy on quick-link hover; override the global rule above */
+  color: #0B1A54 !important;
+  border-color: #0B1A54 !important;
+}
+
+/* Quick-link (featured-link) circle borders + label text */
+.featured-links-wrapper .featured-links-items .featured-link-item .featured-link-circle {
+  border-color: #0B1A54 !important;
+}
+.featured-links-wrapper .featured-links-items .featured-link-item .featured-link {
+  color: #0B1A54 !important;
+}
+
+/* Footer: keep the original swoop curves but recolor them
+   - flat background:  #0B1A54
+   - back curve (was white overlay): #24408E
+   - front curve (was green): #A9D7BD (set in swoop.svg directly) */
+footer.footer-main .footer,
+footer .footer {
+  background-color: #0B1A54 !important;
+}
+footer.footer-main {
+  background-image: none !important;
+  background-color: #0B1A54 !important;
+}
+
+/* Interior-page subtitles use mid-blue instead of sage */
+section[data-type="amsd"][data-layout='vertical-list'] .amsd-wrapper .amsd-items .amsd-item-wrapper .amsd-item .amsd-data-wrapper .amsd-item-subtitle,
+section[data-type="amsd"][data-layout='grid-list'] .amsd-wrapper .amsd-items .amsd-item-wrapper .amsd-item .amsd-item-subtitle,
+.amsd-profile-wrapper .amsd-profile-inner-wrapper .profile-data-wrapper .profile-text-wrapper .amsd-profile-subtitle,
+.amsd-item-subtitle,
+.amsd-profile-subtitle,
+.form-step-wrapper .section-title {
+  color: #24408E !important;
+}
+
+/* Application timeline (form-progress-wrapper) → yellow pill, navy text */
+.form-progress-wrapper {
+  background-color: #FFCF36 !important;
+  color: #0B1A54 !important;
+}
+.form-progress-wrapper .form-progress-step,
+.form-progress-wrapper .form-progress-step .application-progress-text,
+.form-progress-wrapper .form-progress-step .application-progress-number {
+  color: #0B1A54 !important;
+}
+.form-progress-wrapper .form-progress-line {
+  background-color: #0B1A54 !important;
+}
+.form-progress-wrapper .form-progress-line:after {
+  border-left-color: #0B1A54 !important;
+}
+.form-progress-wrapper .form-progress-step.active:after {
+  background-color: #0B1A54 !important;
+}
+
+/* Sage buttons → yellow background, navy text (covers .cms-btn-primary
+   and the application-review section banner used on careers pages) */
+a.cms-btn.cms-btn-primary,
+button.cms-btn.cms-btn-primary,
+div.cms-btn > a.cms-btn-primary,
+.app-review-wrapper .app-review-main .app-review-section .app-review-section-title {
+  background-color: #FFCF36 !important;
+  color: #0B1A54 !important;
+}
+a.cms-btn.cms-btn-primary:hover,
+button.cms-btn.cms-btn-primary:hover,
+div.cms-btn > a.cms-btn-primary:hover {
+  background-color: #FFCF36 !important;
+  color: #0B1A54 !important;
+  filter: brightness(0.95);
+}
+
+/* Cybernautic byline: keep the white logo readable above the swoop curve,
+   but no background panel. */
+.footer-cyber {
+  position: relative;
+  z-index: 5;
+}
+#cms-cybernautic-logo svg { fill: #ffffff !important; }
+#cms-cybernautic-logo-line-2 { color: #ffffff !important; }

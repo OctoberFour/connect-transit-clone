@@ -1,0 +1,6 @@
+scrape/node_modules/
+scrape/site/
+scrape/site2/
+scrape/manifest.json
+scrape/*.log
+.DS_Store
