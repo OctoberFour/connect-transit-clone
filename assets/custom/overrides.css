@@ -134,19 +134,17 @@ a:hover,
 .rider-tool:hover {
   color: #8C93A3 !important;
 }
-.featured-links-wrapper .featured-links-items .featured-link-item:hover .featured-link,
-.featured-links-wrapper .featured-links-items .featured-link-item:hover .featured-link-circle {
-  /* keep navy on quick-link hover; override the global rule above */
+.featured-links-wrapper .featured-links-items .featured-link-item:hover .featured-link {
+  /* keep navy on quick-link label hover; override the global rule above */
   color: #0B1A54 !important;
-  border-color: #0B1A54 !important;
 }
 
-/* Quick-link (featured-link) circle borders + label text */
-.featured-links-wrapper .featured-links-items .featured-link-item .featured-link-circle {
-  border-color: #0B1A54 !important;
-}
+/* Quick-link labels: navy text. Circles: navy border. */
 .featured-links-wrapper .featured-links-items .featured-link-item .featured-link {
   color: #0B1A54 !important;
+}
+.featured-links-wrapper .featured-links-items .featured-link-item .featured-link-circle {
+  border-color: #0B1A54 !important;
 }
 
 /* Footer: keep the original swoop curves but recolor them
@@ -217,3 +215,150 @@ div.cms-btn > a.cms-btn-primary:hover {
 }
 #cms-cybernautic-logo svg { fill: #ffffff !important; }
 #cms-cybernautic-logo-line-2 { color: #ffffff !important; }
+
+/* =========================================================================
+   RESTORE original Connect Transit color scheme — header + footer ONLY.
+   Colors sampled directly from the brand reference screenshots.
+     header/footer blue   #2b65ac
+     swoop back curve     #759ac8 (set in swoop.svg)
+     swoop front curve    #77a03a (set in swoop.svg, also used as link accent)
+     brand mark green     #99c455 (vibrant, used for hamburger / accents)
+   These later !important rules win in the cascade for the navigation chrome
+   while leaving the body styling above this block untouched.
+   ========================================================================= */
+
+/* --- Header: top-bar background (medium royal blue, not navy) ---------- */
+.header-section .top-bar-wrapper {
+  background-color: #2b65ac !important;
+}
+/* Top-bar dropdown menu panels match the same blue */
+.header-section .top-bar-wrapper .top-nav .top-bar-links .nav-menu-bar .top-nav-item .top-dropdown-menu,
+.header-section .top-bar-wrapper .top-nav .top-bar-links .nav-menu-bar .top-nav-item .top-dropdown-menu .top-subnav-item {
+  background-color: #2b65ac !important;
+}
+/* Hovered top-nav item: subtle darker shade so it remains visible */
+.header-section .top-bar-wrapper .top-nav .top-bar-links .nav-menu-bar .top-nav-item.active,
+.header-section .top-bar-wrapper .top-nav .top-bar-links .nav-menu-bar .top-nav-item:hover {
+  background-color: #1f4e87 !important;
+}
+
+/* --- Header: hamburger bars (brand green) ------------------------------ */
+.header-section .hamburger .hamburger-inner,
+.header-section .hamburger .hamburger-inner::before,
+.header-section .hamburger .hamburger-inner::after {
+  background-color: #99c455 !important;
+}
+.header-section .hamburger.is-active .hamburger-inner,
+.header-section .hamburger.is-active .hamburger-inner::before,
+.header-section .hamburger.is-active .hamburger-inner::after {
+  background-color: #ffffff !important;
+}
+
+/* --- Header: top-bar text + icons (white, blue hover) ------------------ */
+.header-section .top-bar-wrapper .top-nav-link,
+.header-section .top-bar-wrapper .top-subnav-link,
+.header-section .top-bar-wrapper .top-nav-social-icon,
+.header-section .top-bar-wrapper .top-nav-search-icon,
+.header-section .top-bar-wrapper .top-nav-link .fab,
+.header-section .top-bar-wrapper .top-nav-link .fas {
+  color: #ffffff !important;
+}
+.header-section .top-bar-wrapper .top-nav-social-link:hover .top-nav-social-icon,
+.header-section .top-bar-wrapper .top-nav-search:hover .top-nav-search-icon,
+.header-section .top-bar-wrapper .top-nav-social-link:hover,
+.header-section .top-bar-wrapper .top-nav-search:hover,
+.header-section .top-bar-wrapper .top-nav-link:hover {
+  color: #99c455 !important;
+}
+
+/* --- Header: rider-tools icons inherit white from .rider-tool ---------- */
+.header-section .rider-tool .fas,
+.header-section .rider-tool .fab,
+.header-section .rider-tools .fas,
+.header-section .rider-tools .fab,
+.header-section .tools-sublink .fas,
+.header-section .tools-sublink .fab {
+  color: inherit !important;
+}
+/* Rider Tools alert badge — brand green circle */
+.header-section .rider-tool .alert-number,
+.header-section .mobile-sub-nav-link .alert-number {
+  background-color: #99c455 !important;
+}
+
+/* --- Header: nav carets inherit text color (no longer yellow) ---------- */
+.header-section .sub-link-icon,
+.header-section .main-nav-link .sub-link-icon,
+.header-section .mobile-nav-link .sub-link-icon,
+.header-section .mobile-sub-nav-link .sub-link-icon {
+  color: inherit !important;
+}
+
+/* --- Header: link hover colors --------------------------------------- */
+.header-section .main-nav-link:hover,
+.header-section .main-nav-link.active {
+  color: #2b65ac !important;
+}
+.header-section .sub-nav-link:hover {
+  color: #99c455 !important;
+}
+.header-section .mobile-nav-link:hover,
+.header-section .mobile-nav-link.active,
+.header-section .mobile-sub-nav-link:hover {
+  color: #2b65ac !important;
+}
+.header-section .rider-tool:hover {
+  color: #99c455 !important;
+}
+
+/* --- Footer: medium-blue overlay + restored banner image -------------- */
+footer.footer-main {
+  background-image: url("Banner2x.png") !important;
+  background-color: #2b65ac !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+footer.footer-main .footer,
+footer .footer {
+  /* Solid medium blue (the rgba+banner combo doesn't quite hit #2b65ac). */
+  background-color: #2b65ac !important;
+}
+
+/* --- Footer: social/contact icons inherit white (no longer yellow) ----- */
+footer.footer-main .fab,
+footer.footer-main .fas,
+footer .footer-social-icon {
+  color: inherit !important;
+}
+
+/* --- Footer: link hover colors (brand greens, not gray) ---------------- */
+footer .footer-info a:hover {
+  color: #99c455 !important;
+}
+footer .footer-link:hover,
+footer a.footer-link:hover,
+footer .footer-links .footer-links-col a.footer-link:hover {
+  color: #99c455 !important;
+}
+footer .footer-sitemap a:hover {
+  color: #ffffff !important;
+}
+
+/* --- Homepage quicklinks: brand-green background + texture ----------
+ * Brand green wrapper #99c455 sits underneath. The `.featured-links-cover`
+ * paints `green_back.jpg` on top for the textured look. The `.lazy` class
+ * normally forces `background-image:none` until a JS loader strips it; we
+ * override it here so the texture shows in this static preview without
+ * needing the loader. */
+.featured-links-wrapper {
+  background: #99c455 !important;
+}
+.featured-links-wrapper .featured-links-cover,
+.featured-links-wrapper .featured-links-cover.lazy {
+  background-image: url("../connect-transit.com/assets/images/green_back.jpg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-color: transparent !important;
+}

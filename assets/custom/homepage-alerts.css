@@ -1,0 +1,166 @@
+/* Homepage Custom Alert Bar
+ * Yellow on navy. Distinct from the standard site-wide notification bar
+ * (which sits inside .top-bar-wrapper). This bar sits above everything in
+ * the header and rotates through currently active service alerts.
+ *
+ * All selectors are namespaced .hpa- so they cannot collide with the host
+ * CMS styles.
+ */
+
+#homepage-alert-bar.hpa-bar {
+  background-color: #FFCF36;
+  color: #0B1A54;
+  border-bottom: 2px solid #0B1A54;
+  font-family: 'Open Sans', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+  z-index: 60;
+}
+
+.hpa-bar .hpa-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hpa-bar .hpa-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: #0B1A54;
+}
+
+.hpa-bar .hpa-label .fas {
+  font-size: 14px;
+}
+
+.hpa-bar .hpa-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 1.4em;
+  overflow: hidden;
+}
+
+.hpa-bar .hpa-item {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0B1A54;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 320ms ease, transform 320ms ease;
+  pointer-events: none;
+}
+
+.hpa-bar .hpa-item.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+.hpa-bar .hpa-item:hover .hpa-title,
+.hpa-bar .hpa-item:focus-visible .hpa-title {
+  text-decoration: underline;
+}
+
+.hpa-bar .hpa-routes {
+  display: inline-flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.hpa-bar .hpa-route {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #0B1A54;
+  color: #FFCF36;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.hpa-bar .hpa-text {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hpa-bar .hpa-title {
+  font-weight: 700;
+}
+
+.hpa-bar .hpa-counter {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+.hpa-bar .hpa-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.hpa-bar .hpa-view-all {
+  color: #0B1A54;
+  font-weight: 700;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.hpa-bar .hpa-view-all:hover,
+.hpa-bar .hpa-view-all:focus-visible {
+  color: #000a3a;
+}
+
+.hpa-bar .hpa-dismiss {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #0B1A54;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+.hpa-bar .hpa-dismiss:hover,
+.hpa-bar .hpa-dismiss:focus-visible {
+  background: rgba(11, 26, 84, 0.12);
+  outline: none;
+}
+
+@media (max-width: 720px) {
+  .hpa-bar .hpa-inner { padding: 8px 14px; gap: 10px; flex-wrap: wrap; }
+  .hpa-bar .hpa-label { font-size: 11px; }
+  .hpa-bar .hpa-text { white-space: normal; }
+  .hpa-bar .hpa-item { white-space: normal; }
+  .hpa-bar .hpa-counter,
+  .hpa-bar .hpa-view-all { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hpa-bar .hpa-item { transition: opacity 1ms linear; transform: none; }
+}
